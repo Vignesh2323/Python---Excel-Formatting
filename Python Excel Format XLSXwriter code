@@ -109,4 +109,21 @@ worksheet.conditional_format('C1:C3523', {'type':     'cell',
                                         'criteria': '>=',
                                         'value':    1,
                                         'format':   format1})
+
+
+
+"""Doing data validation in excel"""
+
+worksheet.data_validation('E1:E25', {'validate': 'integer',
+                                  'criteria': 'between',
+                                  'minimum': 1,
+                                  'maximum': 100,
+                                  'input_title': 'Enter an integer:',
+                                  'input_message': 'between 1 and 100'})
+
+list1 = ["Another","Awesome","Day"]
+worksheet.data_validation('F1:F25', {'validate': 'list',
+                                  'source': list1,})
+
+    
 writer.save()
